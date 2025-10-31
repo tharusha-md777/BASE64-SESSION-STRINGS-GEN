@@ -9,7 +9,7 @@
      "restart": "pm2 restart THARUSHA-MD_PAIR"
     },
   "dependencies": {
-    "@whiskeysockets/baileys": "github:nstar-y/bail",              
+    "@whiskeysockets/baileys": "npm:@rexxhayanasi/elaina-bail",              
     "@adiwajshing/keyed-db": "^0.2.4",
     "jimp": "0.16.1",
     "qrcode": "^1.5.3",
