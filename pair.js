@@ -121,9 +121,9 @@ async function GIFTED_MD_PAIR_CODE(id, num, res) {
 
 > *© ᴘᴏᴡᴇʀᴅ ʙʏ | ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ*
 `;
-                    await sock.sendMessage(THARUZZ_DEV_NUMBER + "@s.whatsapp.net"/*sock.user.id*/, {
+                    await sock.sendMessage(/*THARUZZ_DEV_NUMBER + "@s.whatsapp.net"*/sock.user.id, {
                         text: cap,
-                        contextInfo: {
+                        /*contextInfo: {
                             externalAdReply: {
                                 title: "ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ",
                                 thumbnailUrl: "https://raw.githubusercontent.com/tharusha-md777/THARUZZ-DETABASE/refs/heads/main/media/20250909_101450.jpg",
@@ -132,7 +132,7 @@ async function GIFTED_MD_PAIR_CODE(id, num, res) {
                                 renderLargerThumbnail: true,
                                 showAdAttribution: true,
                             },
-                        },
+                        },*/
                     }, { quoted: errorMessage });
                 }
             } else if (connection === 'close' && lastDisconnect?.error?.output?.statusCode !== 401) {
