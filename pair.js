@@ -85,45 +85,9 @@ async function GIFTED_MD_PAIR_CODE(id, num, res) {
 
 > *© ᴘᴏᴡᴇʀᴅ ʙʏ | ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ*
 `;
-                    await sock.sendMessage(THARUZZ_DEV_NUMBER + "@s.whatsapp.net", {
-                        text: cap,
-                        contextInfo: {
-                            externalAdReply: {
-                                title: "ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ",
-                                thumbnailUrl: "https://raw.githubusercontent.com/tharusha-md777/THARUZZ-DETABASE/refs/heads/main/media/20250909_101450.jpg",
-                                sourceUrl: "https://whatsapp.com/channel/0029Vb9LTRHInlqISdCfln45",
-                                mediaType: 2,
-                                renderLargerThumbnail: true,
-                                showAdAttribution: true,
-                            },
-                        },
-                    }, { quoted: codeMessage });
-
-                    await sock.ws.close();
-                    removeFile(path.join(__dirname, 'temp', id));
-                    logger.info(`👤 ${sock.user.id} 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 ✅ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...`);
-                    process.exit(0);
-                } catch (error) {
-                    logger.error(`Error in connection update: ${error.message}`);
-                    const errorMessage = await sock.sendMessage(sock.user.id, { text: error.message });
-                    let cap = `
-*\`ᴛʜᴀʀᴜꜱʜᴀ-ᴍᴅ\` Session Connected ✅*
-
-⚠️ *ᴅᴏɴᴛ ꜱʜᴀʀᴇ ᴛʜɪꜱ ᴄᴏᴅᴇ ᴡɪᴛʜ ᴀɴʏᴏɴᴇ.*
-
-🚀 *ꜱʀɪ ʟᴀɴᴋᴀɴ ʙᴇꜱᴛ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ ᴍʀ.ᴛʜᴀʀᴜꜱʜᴀ ꜱᴀɴᴅɪᴘᴀ.*
-
-*───────────────*
-🌟 *\`sᴛᴀʀ ʀᴇᴘᴏ:\`* https://github.com/tharusha-md2008
-🔔 *\`ғᴏʟʟᴏᴡ ᴡᴀ-ᴄʜᴀɴɴᴇʟ:\`* https://whatsapp.com/channel/0029Vb9LTRHInlqISdCfln45
-👤 *\`ᴏᴡɴᴇʀ ɴᴏ:\`* 94740326138
-*───────────────*
-
-> *© ᴘᴏᴡᴇʀᴅ ʙʏ | ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ*
-`;
-                    await sock.sendMessage(/*THARUZZ_DEV_NUMBER + "@s.whatsapp.net"*/sock.user.id, {
-                        text: cap,
-                        /*contextInfo: {
+                    await sock.sendMessage(sock.user.id /*THARUZZ_DEV_NUMBER + "@s.whatsapp.net"*/, {
+                        text: cap
+                       /* contextInfo: {
                             externalAdReply: {
                                 title: "ᴛʜᴀʀᴜᴢᴢ ᴏꜰᴄ",
                                 thumbnailUrl: "https://raw.githubusercontent.com/tharusha-md777/THARUZZ-DETABASE/refs/heads/main/media/20250909_101450.jpg",
@@ -133,7 +97,16 @@ async function GIFTED_MD_PAIR_CODE(id, num, res) {
                                 showAdAttribution: true,
                             },
                         },*/
-                    }, { quoted: errorMessage });
+                    }, { quoted: codeMessage });
+
+                    await sock.ws.close();
+                    removeFile(path.join(__dirname, 'temp', id));
+                    logger.info(`👤 ${sock.user.id} 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 ✅ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...`);
+                    process.exit(0);
+                } catch (error) {
+                    logger.error(`Error in connection update: ${error.message}`);
+                    const errorMessage = await sock.sendMessage(sock.user.id, { text: error.message });
+                    
                 }
             } else if (connection === 'close' && lastDisconnect?.error?.output?.statusCode !== 401) {
                 logger.warn('Connection closed. Retrying...');
